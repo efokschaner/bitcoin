@@ -42,10 +42,10 @@ QString BitcoinUnits::longName(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("BTC");
-    case mBTC: return QString("mBTC");
-    case uBTC: return QString::fromUtf8("µBTC (bits)");
-    case SAT: return QString("Satoshi (sat)");
+    case BTC: return QString("HLD");
+    case mBTC: return QString("mHLD");
+    case uBTC: return QString::fromUtf8("µHLD");
+    case SAT: return QString("Banana (bnn)");
     default: return QString("???");
     }
 }
@@ -54,8 +54,8 @@ QString BitcoinUnits::shortName(int unit)
 {
     switch(unit)
     {
-    case uBTC: return QString::fromUtf8("bits");
-    case SAT: return QString("sat");
+    case uBTC: return QString::fromUtf8("µHLD");
+    case SAT: return QString("bnn");
     default: return longName(unit);
     }
 }
@@ -64,10 +64,10 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Bitcoins");
-    case mBTC: return QString("Milli-Bitcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Bitcoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTC: return QString("Holdcoins");
+    case mBTC: return QString("Milli-Holdcoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Holdcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case SAT: return QString("Banana (bnn) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
