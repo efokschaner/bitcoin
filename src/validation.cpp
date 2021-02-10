@@ -3391,6 +3391,10 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
     // First transaction must be coinbase, the rest must not be
     if (block.vtx.empty() || !block.vtx[0]->IsCoinBase())
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-missing", "first tx is not coinbase");
+    
+    if (block.vtx.size() > 1)
+        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-txns-multiple", "more than one transaction");
+    
     for (unsigned int i = 1; i < block.vtx.size(); i++)
         if (block.vtx[i]->IsCoinBase())
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-multiple", "more than one coinbase");
